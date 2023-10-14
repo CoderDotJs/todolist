@@ -122,7 +122,10 @@ const TodoItem = ({ index, todo, onDelete, onUpdate }) => {
               </button>
               <button
                 className="px-3 py-1 bg-slate-400 rounded-sm text-white mt-3 text-sm"
-                onClick={() => onDelete(index)}
+                onClick={() => {
+                  onDelete(index);
+                  onDeleteClose();
+                }}
               >
                 Delete
               </button>
