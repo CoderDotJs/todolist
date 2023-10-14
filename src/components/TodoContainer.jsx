@@ -10,12 +10,14 @@ const TodoContainer = ({ todos, search, onDelete, onUpdate }) => {
   ];
   return (
     <>
+      {/* if no items found on search  */}
       {search && searchedTodos.length == 0 && (
         <div className="text-center p-5">
           <FcDocument className="w-14 h-14 my-2 mx-auto" />
           <h6 className="text-lg font-semibold">No todo found!</h6>
         </div>
       )}
+      {/* if has items on search  */}
       {search &&
         searchedTodos.length > 0 &&
         searchedTodos.map((todo, index) => {
@@ -29,6 +31,7 @@ const TodoContainer = ({ todos, search, onDelete, onUpdate }) => {
             />
           );
         })}
+      {/* if not searched  */}
       {!search &&
         todos.map((todo, index) => {
           return (

@@ -28,6 +28,7 @@ const TodoItem = ({ index, todo, onDelete, onUpdate }) => {
       key={index}
       className="border border-l-0 border-r-0 border-b-0 first:border-t-0 last:border-b-0 flex justify-between items-center gap-2 p-2"
     >
+      {/* checkbox */}
       <Checkbox
         isChecked={todo.isCompleted}
         className="border-slate-400 flex-grow"
@@ -42,6 +43,7 @@ const TodoItem = ({ index, todo, onDelete, onUpdate }) => {
           {todo.todo}
         </span>
       </Checkbox>
+      {/* copy button  */}
       <IconButton
         onClick={() => {
           navigator.clipboard.writeText(todo.todo);
@@ -50,6 +52,7 @@ const TodoItem = ({ index, todo, onDelete, onUpdate }) => {
       >
         <GoCopy className="text-lg mx-1 cursor-pointer" title="Click to copy" />
       </IconButton>
+      {/* edit button  */}
       <Popover
         isOpen={isOpen}
         initialFocusRef={firstFieldRef}
@@ -96,6 +99,7 @@ const TodoItem = ({ index, todo, onDelete, onUpdate }) => {
           </FocusLock>
         </PopoverContent>
       </Popover>
+      {/* delete button  */}
       <Popover
         isOpen={deleteOpen}
         onOpen={onDeleteOpen}
